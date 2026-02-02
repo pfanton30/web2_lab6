@@ -4,7 +4,8 @@
   "description": "PWA with camera access",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "serve": "node server.js"
   },
   "dependencies": {
     "dotenv": "^17.2.3",
@@ -15,3 +16,4 @@
     "node": ">=14.0.0"
   }
 }
+
