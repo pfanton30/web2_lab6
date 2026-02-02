@@ -1,0 +1,8 @@
+{
+  "name": "PhotoDiary",
+  "description": "PWA with camera access",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "orientation": "portrait"
+}

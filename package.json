@@ -1,0 +1,17 @@
+{
+  "name": "photodiary",
+  "version": "1.0.0",
+  "description": "PWA with camera access",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^4.18.2",
+    "web-push": "^3.6.6"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
