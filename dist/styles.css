@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #aaaaaa;
+  padding: 10px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.camera-section {
+  margin-bottom: 20px;
+}
+
+video, canvas {
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin: 10px auto;
+  border: 1px solid #aaaaaa;
+}
+
+canvas {
+  display: none;
+}
+
+button {
+  padding: 10px 20px;
+  background: #6666ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button:hover {
+  background: #6666ff;
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+#photoPreview {
+  margin: 20px 0;
+}
+
+#photoPreview img {
+  max-width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-family: inherit;
+}
+
+.note {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+}
+
+.note img {
+  max-width: 100%;
+  margin-top: 10px;
+}
+
+.note-time {
+  color: #666;
+  font-size: 0.9em;
+}
