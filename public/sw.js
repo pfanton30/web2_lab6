@@ -50,18 +50,29 @@ self.addEventListener('fetch', (event) => {
   }
 
   // Network First - pokušaj mrežu
-  if (url.pathname.startsWith('/api/')) {
+if (url.pathname.startsWith('/api/')) {
     event.respondWith(
       fetch(request)
-        .then((response) => {     // vrati response, spremi u cache
-          const responseClone = response.clone();
-          caches.open(RUNTIME_CACHE).then((cache) => {
-            cache.put(request, responseClone);
-          });
+        .then((response) => {
+          // Cacheiraj samo GET zahtjeve
+          if (request.method === 'GET') {
+            const responseClone = response.clone();
+            caches.open(RUNTIME_CACHE).then((cache) => {
+              cache.put(request, responseClone);
+            });
+          }
           return response;
         })
         .catch(() => {
-          return caches.match(request);
+          // Pokušaj dohvatiti iz cachea (samo GET-ovi će postojati)
+          if (request.method === 'GET') {
+            return caches.match(request);
+          }
+          // Za POST/PUT/DELETE samo baci grešku
+          return new Response(
+            JSON.stringify({ error: 'Network error, no cached data' }),
+            { status: 503, headers: { 'Content-Type': 'application/json' } }
+          );
         })
     );
     return;
@@ -118,4 +129,5 @@ self.addEventListener('notificationclick', (event) => {
   event.waitUntil(
     clients.openWindow('/')
   );
+
 });
